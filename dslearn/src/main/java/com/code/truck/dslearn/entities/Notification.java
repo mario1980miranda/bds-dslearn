@@ -2,6 +2,7 @@ package com.code.truck.dslearn.entities;
 
 import java.time.Instant;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +30,7 @@ public class Notification {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String text;
+    @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private Instant moment;
     private boolean read = Boolean.FALSE;
     private String route;
