@@ -7,6 +7,7 @@ INSERT INTO tb_role (authority) VALUES ('ROLE_INSTRUCTOR');
 INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
 
 INSERT INTO tb_role_user (user_id, role_id) VALUES (1, 1);
+INSERT INTO tb_role_user (user_id, role_id) VALUES (2, 1);
 INSERT INTO tb_role_user (user_id, role_id) VALUES (2, 2);
 INSERT INTO tb_role_user (user_id, role_id) VALUES (3, 1);
 INSERT INTO tb_role_user (user_id, role_id) VALUES (3, 2);
@@ -27,3 +28,6 @@ INSERT INTO TB_RESOURCE ( DESCRIPTION , EXTERNAL_LINK , IMG_URI , POSITION , TIT
 INSERT INTO TB_SECTION ( TITLE , DESCRIPTION , POSITION , IMG_URI , RESOURCE_ID , PREREQUISITE_ID ) VALUES ('Capitulo 1' , 'Neste capitulo vamos comecar' , 1 , 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg' , 1 , null );
 INSERT INTO TB_SECTION ( TITLE , DESCRIPTION , POSITION , IMG_URI , RESOURCE_ID , PREREQUISITE_ID ) VALUES ('Capitulo 2' , 'Neste capitulo vamos continuar' , 2 , 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg' , 1 , 1);
 INSERT INTO TB_SECTION ( TITLE , DESCRIPTION , POSITION , IMG_URI , RESOURCE_ID , PREREQUISITE_ID ) VALUES ('Capitulo 3' , 'Neste capitulo vamos terminar' , 3 , 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg' , 1 , 2 );
+
+INSERT INTO TB_ENROLLMENT ( USER_ID , OFFER_ID , ENROLL_MOMENT , REFUND_MOMENT , AVAILABLE , ONLY_UPDATE ) VALUES (1,1,TIMESTAMP WITH TIME ZONE '2020-11-21T10:00:00.12345Z',null,true,false);
+INSERT INTO TB_ENROLLMENT ( USER_ID , OFFER_ID , ENROLL_MOMENT , REFUND_MOMENT , AVAILABLE , ONLY_UPDATE ) VALUES (2,1,TIMESTAMP WITH TIME ZONE '2020-11-21T10:00:00.12345Z',null,true,false);
