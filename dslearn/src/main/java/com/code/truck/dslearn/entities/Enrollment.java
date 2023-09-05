@@ -2,22 +2,23 @@ package com.code.truck.dslearn.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = "tb_enrollment")
 @NoArgsConstructor
 @Getter
-@Setter
 @EqualsAndHashCode
 @ToString
 public class Enrollment implements Serializable {
@@ -30,6 +31,9 @@ public class Enrollment implements Serializable {
     private boolean available;
     private boolean onlyUpdate;
 
+    @ManyToMany(mappedBy = "enrollmentsDone")
+    private Set<Lesson> lessonsDone = new HashSet<>();
+
     public Enrollment(User user, Offer offer, Instant enrollMoment, Instant refundMoment, boolean available,
             boolean onlyUpdate) {
         id.setUser(user);
@@ -40,19 +44,24 @@ public class Enrollment implements Serializable {
         this.onlyUpdate = onlyUpdate;
     }
 
-    public User getStudent() {
-        return id.getUser();
+    public void setId(EnrollmentPK id) {
+        this.id = id;
     }
 
-    public void setStudent(User user) {
-        id.setUser(user);
+    public void setEnrollMoment(Instant enrollMoment) {
+        this.enrollMoment = enrollMoment;
     }
 
-    public Offer getOffer() {
-        return id.getOffer();
+    public void setRefundMoment(Instant refundMoment) {
+        this.refundMoment = refundMoment;
     }
 
-    public void setOffer(Offer offer) {
-        id.setOffer(offer);
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
+
+    public void setOnlyUpdate(boolean onlyUpdate) {
+        this.onlyUpdate = onlyUpdate;
+    }
+
 }

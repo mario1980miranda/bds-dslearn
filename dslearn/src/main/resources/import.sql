@@ -31,3 +31,18 @@ INSERT INTO TB_SECTION ( TITLE , DESCRIPTION , POSITION , IMG_URI , RESOURCE_ID 
 
 INSERT INTO TB_ENROLLMENT ( USER_ID , OFFER_ID , ENROLL_MOMENT , REFUND_MOMENT , AVAILABLE , ONLY_UPDATE ) VALUES (1,1,TIMESTAMP WITH TIME ZONE '2020-11-21T10:00:00.12345Z',null,true,false);
 INSERT INTO TB_ENROLLMENT ( USER_ID , OFFER_ID , ENROLL_MOMENT , REFUND_MOMENT , AVAILABLE , ONLY_UPDATE ) VALUES (2,1,TIMESTAMP WITH TIME ZONE '2020-11-21T10:00:00.12345Z',null,true,false);
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 1 do capitulo 1', 1, 1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (1, 'Conteudo da aula 1', 'http://link-para-um-video.com');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 2 do capitulo 1', 2, 1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (2, 'Conteudo da aula 2', 'http://link-para-um-video.com');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 3 do capitulo 1', 3, 1);
+INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (3, 'Conteudo da aula 3', 'http://link-para-um-video.com');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Tarefa 1 do capitulo 1', 4, 1);
+INSERT INTO tb_task (id, description, question_Count, aproval_Count, weigth, due_Date) VALUES (4, 'Realizar a tarefa XPTO', 10, 8, 1.0, TIMESTAMP WITH TIME ZONE '2020-11-25T23:59:59.00000Z');
+
+INSERT INTO tb_lessons_done (user_id, offer_id, lesson_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done (user_id, offer_id, lesson_id) VALUES (1, 1, 2);
